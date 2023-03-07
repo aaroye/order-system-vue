@@ -31,6 +31,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     animation: show 1s cubic-bezier(0.075, 0.82, 0.165, 1) normal;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px 0 rgba(255, 175, 25, 0.836);
+    }
   }
 
   .shop-image {
@@ -50,6 +56,15 @@
     100% {
       transform: scale(1);
       opacity: 1;
+    }
+  }
+
+  @keyframes hover {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
     }
   }
 </style>

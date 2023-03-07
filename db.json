@@ -1,56 +1,100 @@
-[
-  {
-    "id": "mcd",
-    "store": "麥當勞",
-    "order": [
-      {
-        "name": "大麥克",
-        "price": 79
-      },
-      {
-        "name": "薯條",
-        "price": 38
-      },
-      {
-        "name": "可樂",
-        "price": 28
-      }
-    ]
-  },
-  {
-    "id": "kfc",
-    "store": "肯德基",
-    "order": [
-      {
-        "name": "吮指原味雞",
-        "price": 45
-      },
-      {
-        "name": "脆皮炸雞",
-        "price": 49
-      },
-      {
-        "name": "濃情熱意紅茶",
-        "price": 25
-      }
-    ]
-  },
-  {
-    "id": "pizzahut",
-    "store": "必勝客",
-    "order": [
-      {
-        "name": "義式肉醬麵",
-        "price": 129
-      },
-      {
-        "name": "夏威夷披薩",
-        "price": 289
-      },
-      {
-        "name": "可樂",
-        "price": 28
-      }
-    ]
-  }
-]
+{
+  "shops": [
+    {
+      "id": "mcd",
+      "store": "麥當勞",
+      "foodType": [
+        {
+          "name": "飲料",
+          "foods": [
+            {
+              "name": "可口可樂",
+              "price": 60
+            },
+            {
+              "name": "綠茶",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "name": "小點",
+          "foods": [
+            {
+              "name": "6塊雞塊",
+              "price": 60
+            },
+            {
+              "name": "蛋捲冰淇淋",
+              "price": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kfc",
+      "store": "肯德基",
+      "foodType": [
+        {
+          "name": "飲料",
+          "foods": [
+            {
+              "name": "可口可樂",
+              "price": 60
+            },
+            {
+              "name": "奶茶",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "name": "小點",
+          "foods": [
+            {
+              "name": "薯條",
+              "price": 35
+            },
+            {
+              "name": "香雞排",
+              "price": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pizzahut",
+      "store": "必勝客",
+      "foodType": [
+        {
+          "name": "披薩",
+          "foods": [
+            {
+              "name": "夏威夷披薩",
+              "price": 199
+            },
+            {
+              "name": "辣味義大利披薩",
+              "price": 219
+            }
+          ]
+        },
+        {
+          "name": "義大利麵",
+          "foods": [
+            {
+              "name": "番茄肉醬義大利麵",
+              "price": 99
+            },
+            {
+              "name": "奶油培根義大利麵",
+              "price": 129
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

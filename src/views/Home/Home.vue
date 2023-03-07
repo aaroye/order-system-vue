@@ -2,32 +2,27 @@
   import ShopCard from "./ShopCard.vue";
   import Loader from "../../components/Loader.vue";
   import Typed from "typed.js";
+  import { getAllShopData } from "../../services/api/dataService";
   import { onMounted, ref } from "vue";
+
+  const fakeImgUrl = [
+    "https://picsum.photos/id/152/100/100",
+    "https://picsum.photos/id/231/100/100",
+    "https://picsum.photos/id/443/100/100",
+  ];
   const shopData = ref(null);
   const typing = ref(null);
-  const getData = async () => {
-    // try {
-    //   let data = await fetch(
-    //     "https://my-json-server.typicode.com/aaroye/fakeJsonServerTestData/stores"
-    //   );
-    //   if (!data.ok) {
-    //     throw Error("fetch failed");
-    //   }
-    //   shopData.value = await data.json();
-    //   console.log(shopData.value);
-    // } catch (err) {
-    //   throw Error(err);
-    // }
-    setTimeout(() => {
-      shopData.value = JSON.parse(
-        `[{"id":"mcd","store":"麥當勞","order":[{"name":"大麥克","price":79},{"name":"薯條","price":38},{"name":"可樂","price":28}]},{"id":"kfc","store":"肯德基","order":[{"name":"吮指原味雞","price":45},{"name":"脆皮炸雞","price":49},{"name":"濃情熱意紅茶","price":25}]},{"id":"pizzahut","store":"必勝客","order":[{"name":"義式肉醬麵","price":129},{"name":"夏威夷披薩","price":289},{"name":"可樂","price":28}]}]`
-      );
-    }, 2000);
-  };
+
+  const getData = "";
 
   onMounted(() => {
-    getData();
-
+    getAllShopData()
+      .then((data) => {
+        if (data.state === "ok") {
+          shopData.value = data.shops;
+        }
+      })
+      .catch((err) => console.log(err));
     new Typed(typing.value, {
       strings: [
         "今天想要來點... 珍珠奶茶？",
@@ -49,10 +44,10 @@
     <div class="cards" v-if="shopData">
       <ShopCard
         v-if="shopData"
-        v-for="data in shopData"
+        v-for="(data, index) in shopData"
         :name="data.store"
         :id="data.id"
-        imgSrc="https://picsum.photos/100/100"
+        :imgSrc="fakeImgUrl[index]"
       />
     </div>
     <Loader v-else style="margin-top: 15rem" />
