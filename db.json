@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mcd",
+    "store": "麥當勞",
+    "order": [
+      {
+        "name": "大麥克",
+        "price": 79
+      },
+      {
+        "name": "薯條",
+        "price": 38
+      },
+      {
+        "name": "可樂",
+        "price": 28
+      }
+    ]
+  },
+  {
+    "id": "kfc",
+    "store": "肯德基",
+    "order": [
+      {
+        "name": "吮指原味雞",
+        "price": 45
+      },
+      {
+        "name": "脆皮炸雞",
+        "price": 49
+      },
+      {
+        "name": "濃情熱意紅茶",
+        "price": 25
+      }
+    ]
+  },
+  {
+    "id": "pizzahut",
+    "store": "必勝客",
+    "order": [
+      {
+        "name": "義式肉醬麵",
+        "price": 129
+      },
+      {
+        "name": "夏威夷披薩",
+        "price": 289
+      },
+      {
+        "name": "可樂",
+        "price": 28
+      }
+    ]
+  }
+]
