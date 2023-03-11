@@ -1,20 +1,30 @@
 <script setup>
   import { ref } from "vue";
-  import { pushRoute } from "../../router";
+  import { useModal } from "vue-final-modal";
+  import FoodModal from "./FoodModal.vue";
   const props = defineProps({
     name: String,
     id: String,
-    price: String,
+    price: Number,
     clickHandler: Function,
   });
 
-  //   const clickHandler = () => {
-  //     pushRoute("shops/" + props.id);
-  //   };
+  const { open, close } = useModal({
+    component: FoodModal,
+    attrs: {
+      title: props.name,
+      onConfirm() {
+        close();
+      },
+    },
+    slots: {
+      default: "<p>The content of the modal</p>",
+    },
+  });
 </script>
 
 <template>
-  <div class="card" @click="clickHandler">
+  <div class="card" @click="open">
     <p>{{ name }}</p>
     <p>價格: {{ price }}</p>
   </div>

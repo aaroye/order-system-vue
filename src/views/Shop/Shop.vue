@@ -4,7 +4,6 @@
   import { getShopData } from "../../services/api/dataService";
   import Loader from "../../components/Loader.vue";
   import FoodCard from "./FoodCard.vue";
-  import FoodModal from "./FoodModal.vue";
 
   const props = defineProps({
     id: String,
@@ -18,19 +17,6 @@
       .catch((e) => {
         console.log(e);
       });
-  });
-
-  const { open, close } = useModal({
-    component: FoodModal,
-    attrs: {
-      title: "Hello World!",
-      onConfirm() {
-        close();
-      },
-    },
-    slots: {
-      default: "<p>The content of the modal</p>",
-    },
   });
 </script>
 
@@ -50,8 +36,7 @@
           v-for="(food, index) in shopData.foodType[0].foods"
           :name="food.name"
           :price="food.price"
-          id="test"
-          :clickHandler="open"
+          :key="food.id"
         />
       </div>
     </div>
